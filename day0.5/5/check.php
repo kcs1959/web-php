@@ -9,6 +9,8 @@
 <?php
 $nickname =  $_POST["nickname"];
 
+// string & int
+
 if($nickname == ''){
   print "ニックネームが入力されてません！";
 }else{
