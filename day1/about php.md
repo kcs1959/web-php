@@ -314,13 +314,13 @@ if($var){
 データをひとあつめにして扱える
 
 ```php
-$array = [1, 2, 3]
-print($array[0])
+$array = [1, 2, 3];
+print($array[0]);
 
 // for文で活用してみる
 for ($i = 0; $i < 3; $i++) {
-  print("UNKO" + $i)
-}
+  echo "UNKO" + $i
+};
 
 ```
 
