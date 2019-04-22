@@ -357,6 +357,33 @@ for ($count = 0; $count <= 10; $count++){
 
 
 ### 配列
+データをひとあつめにして扱える
 
+```php
+$array = [1, 2, 3]
+print($array[0])
+
+// for文で活用してみる
+for ($i = 0; i < 3; i++) {
+  print("UNKO" + i)
+}
+
+```
+
+[0]のようにすることで配列内の値を取得することができる
+配列内の要素は$0$番目から数えます！
+
+### 連想配列
+
+```php
+$hoge = array(
+  'APPLE' => 198,
+  'BANANA' => 348,
+  'iPad Pro' => 158000
+)
+
+echo hoge['iPad Pro'];
+
+```
 
 
