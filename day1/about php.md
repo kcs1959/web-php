@@ -318,8 +318,8 @@ $array = [1, 2, 3]
 print($array[0])
 
 // for文で活用してみる
-for ($i = 0; i < 3; i++) {
-  print("UNKO" + i)
+for ($i = 0; $i < 3; $i++) {
+  print("UNKO" + $i)
 }
 
 ```
@@ -334,7 +334,7 @@ $hoge = array(
   'APPLE' => 198,
   'BANANA' => 348,
   'iPad Pro' => 158000
-)
+);
 
 echo hoge['iPad Pro'];
 
