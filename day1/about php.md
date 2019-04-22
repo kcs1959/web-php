@@ -298,6 +298,8 @@ var_dump(10 < 3);
 
 さて、やっと`if`の説明に入れる。
 
+### 分岐
+
 ifは、真偽値を受け取り、それによって処理を変える関数である。
 ```php
 <?php
@@ -310,3 +312,45 @@ if($var){
 }
 ```
 
+else ifについて
+
+```php
+<?php
+$bar = false;
+$foo = true;
+
+if($bar){
+  // $barがtrueの時
+}else if($foo){
+  // $fooがtrueの時  
+}else{
+  // $barも$fooもfalseの時
+}
+```
+
+
+## 反復
+
+
+while文
+
+```php
+<?php
+
+$count = 0;
+
+while($count <= 10){
+  print("ループ中");
+  
+  $count++;
+}
+```
+
+for文
+```php
+<?php
+
+for ($count = 0; $count <= 10; $count++){
+  print("ループ中");
+}
+```
