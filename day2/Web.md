@@ -59,7 +59,8 @@ if($nickname == ''){
 </body>
 </html>
 ```
-`index.html`では、`form`タグ内でaaaa
+`index.html`では、`form`タグ内で
 
 
 `$nickname = $_POST["nickname"]`
+
