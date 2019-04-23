@@ -319,7 +319,7 @@ print($array[0]);
 
 // for文で活用してみる
 for ($i = 0; $i < 3; $i++) {
-  echo "UNKO" + $i
+  echo $i
 };
 
 ```
