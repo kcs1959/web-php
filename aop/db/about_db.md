@@ -2,12 +2,49 @@
 データベースについての説明をする。
 
 データベースとは、検索や蓄積が容易にできるよう整理された情報の集まり。
+データベースを使うと、高度なデータの保存、削除、検索ができるようになる
 
-# まずはざっくり(そもそも、感覚を掴んでもらう)
-コードを元に説明する
+# まずはざっくり
 
-KCSという名のDB
-anketoというテーブル名
+ここでは、MySQLというデータベースを使う。SQLという言語を用いて、データの操作を行う。
+MySQLではデータはテーブルと呼ばれる表ごとに管理され、各テーブルはレコードの集まりから構成される。
+図を用いて説明する。
+[ここ](https://academy.gmocloud.com/know/20160425/2259)参考に説明
+
+次のようなテーブルについて考えてみる
+
+|code|nickname|email|goiken|
+|:-----------|------------:|:------------:|:------------:|
+|1|ogiwara|ogiwara@keio.jp|美味しかったです|
+|2|kobayashi|kobayashi@keio.jp|また行きたい|
+
+まず、このテーブルを作るには、以下のようなSQL文を用いる[^1]
+```sql
+CREATE TABLE `anketo` (
+  `code` INT auto_increment,
+  `nickname` varchar,
+  `email` varchar,
+  `goiken` varchar,
+)
+```
+
+これで空のテーブルができる。次に、このテーブルにデータを入れていく
+
+```sql
+INSERT INTO anketo (nickname, email, goiken) VALUES (ogiwara, ogiwara@keio.jp, 美味しかったです)
+```
+
+これで、レコードを一行追加できる。
+ここで、codeを指定していないことに気がつくと思うが、auto_incrementを指定しているので、
+自動で+1された値が追加される。これはidなどの用途で利用される。
+
+codeが1のレコードデータを取得するには、以下のようなSQL文を用いる
+```sql
+SELECT * FROM anketo WHERE code=1
+```
+
+
+
 
 select, insertとか
 
@@ -49,3 +86,4 @@ SQL文を用いて、データベースへのデータの追加、削除、検�
 に分類される
 
 
+[^1]: 説明の都合じょ、ちょっと省略した
