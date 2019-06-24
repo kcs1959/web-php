@@ -7,23 +7,27 @@ Gitは各ファイルごとにバックアップが作成されるため、
 などの操作ができるようになる。
 エラー発生時の原因特定、複数人での共同開発、機能のテストなど、様々な作業に応用できる。
 
-# 実用例の説明
-Gitの具体的な操作を、筆者が開発しているモバイルアプリ、Penmarkでの実用例を元に説明する
+# 実用例
+Gitの具体的な操作を、筆者が開発しているモバイルアプリ、Penmarkでの実用例を元に説明する。
+細かいコマンドについては後に説明する。
 
-diffでローカルとの差分
-addで変更対象として追加
-commitで変更内容を記録
-logでコミットログの確認
-log -pで詳細なコミットログの確認
-revertで変更内容
+- diffでローカルとの差分
+- addで変更対象として追加
+- commitで変更内容を記録
+- logでコミットログの確認
+- log -pで詳細なコミットログの確認
+- revertで変更内容
 
 さらに、GUIでの操作方法を説明する。
-ブランチの分け方については、まずタイムラインを書き、Penmarkのアプリバージョンごとのブランチ、
-このリポジトリの分け方について
-複数人作業時の、Gitでの戦略について(materブランチを元に機能追加ごとにブランチ生やしたり、
-developブランチ作ったり)
+ブランチの分け方については、まずタイムラインを書いて概要を説明し、実用例として
+[Penmarkのアプリバージョンごとのブランチ](https://dev.azure.com/penmark-jp/_git/Penmark)、
+[このリポジトリの分け方](https://github.com/kcs1959/web-php)
+について説明する。
 
-# 実際に、git initからのデモを書いておく
+複数人作業時の、Gitでの戦略(materブランチを元に機能追加ごとにブランチ生やしたり、
+developブランチ作ったり)について説明する。
+
+# 実際に、git initからのデモ
 
 まずはVimで簡単なコードを書く
 
@@ -121,9 +125,24 @@ $ cat hello.c
 # Githubについて
 Githubは、Gitで管理しているソースコードをホスティングすることができるサービス。
 GitとGithubを混同している人が非常に多いので注意する。
+
+Githubの各機能(issue, PRとか)について説明し、どういったところで使われているのか説明する
+- [PHPのコード](https://github.com/php/php-src)
+- [Ogiwaraのコード](https://github.com/Ogiwara-CostlierRain464)
+- [Flutterのコード](https://github.com/flutter/flutter)
+
 Githubのようにソースコードのホスティングができるサービスは、他にはGitlab, Bitbucket, 
 Azure Repoなどがある。
 
 # CI/CDについて
 Gitの仕組みをうまく利用して、コミット時にソースコードのチェック(CI)や、コンパイル・デプロイを自動で行う(CD)を自動で行うことができる。
 いくつかのCIサービス(Circle CI, Bitrise, Azure Pipeline)を紹介し、Penmarkでの活用例を説明する。
+
+# 実習
+いろいろ参考になるサイトがあるので、それを元に自分でGitの操作をやってみる。
+行き詰まったら、講師およびTAがサポートする
+
+[Gitのコマンド一覧](https://git-scm.com/docs)  
+[Git公式のチュートリアル](https://git-scm.com/docs/gittutorial)
+
+[Githubへの鍵登録](https://qiita.com/katsukii/items/9fd5bbe822904d7cdd0a)
