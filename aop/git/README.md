@@ -25,6 +25,99 @@ developブランチ作ったり)
 
 # 実際に、git initからのデモを書いておく
 
+まずはVimで簡単なコードを書く
+
+```bash
+$ vi hello.c
+```
+
+```hello.c
+#include <stdio.h>
+
+int main(void){
+  printf("Hello world!\n");
+  return 0;
+}
+```
+
+コンパイルして、実行
+
+```bash
+$ gcc hello.c
+$ ./a.out
+```
+
+gitの初期化
+
+```bash
+$ git init
+$ ls -a  # .gitフォルダの生成を確認
+```
+
+Gitで管理しないものをgit ignoreに追加
+
+```bash
+$ vi .gitignore
+```
+
+```.gitignore
+*.out
+```
+
+git ignoreで書かれているもの以外、全てGitでの管理対象として追加
+
+```bash
+$ git add .
+```
+
+バージョンの記録(コミット)
+```bash
+$ git commit -m "Initial commit"
+```
+
+コミットログの確認
+```bash
+$ git log
+```
+
+より細かいコミットログの確認
+```bash
+$ git log -p
+```
+
+hello.cを変えてみる
+
+```hello.c
+#include <stdio.h>
+
+int main(void){
+  printf("Hello Git!\n");
+  return 0;
+}
+```
+
+変更内容を見てみる
+```bash
+$ git diff
+```
+
+コンパイルして、再度コミットする
+a.outの内容も当然変わっているが、git ignoreに追加した為
+無視されていることを確認する。
+```bash
+$ gcc hello.c 
+$ git add .
+$ git commit -m "update message"
+```
+
+変更内容を、元に戻す(Hello, Worldの状態に戻す)
+```bash
+$ git revert HEAD
+$ cat hello.c
+```
+
+ブランチの分け方とかは、自分で確認してみてね
+
 # Githubについて
 Githubは、Gitで管理しているソースコードをホスティングすることができるサービス。
 GitとGithubを混同している人が非常に多いので注意する。
