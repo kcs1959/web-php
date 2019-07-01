@@ -28,6 +28,12 @@ Gitの具体的な操作を、筆者が開発しているモバイルアプリ�
 developブランチ作ったり)について説明する。
 
 # 実際に、git initからのデモ
+Gitの各用語(ワークツリー、ステージングエリア、ローカルリポジトリ、リモートリポジトリ)とコマンド実行時の流れを説明する。
+
+![概念図](https://camo.qiitausercontent.com/304d5a012dcb67e57295bd183086186f0570a98e/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f3132393038382f35373232366638322d633534302d633264302d663563382d6261643362366536646661332e706e67)
+
+[引用元](https://qiita.com/satoshi1335/items/ead109412430a078feaa)
+
 
 まずはVimで簡単なコードを書く
 
@@ -68,7 +74,7 @@ $ vi .gitignore
 *.out
 ```
 
-git ignoreで書かれているもの以外、全てGitでの管理対象として追加
+git ignoreで書かれているもの以外、全てステージング領域に追加　
 
 ```bash
 $ git add .
@@ -100,13 +106,13 @@ int main(void){
 }
 ```
 
-変更内容を見てみる
+変更内容を見てみる(ワークツリーと、ステージングエリアの差分を表示する)
 ```bash
 $ git diff
 ```
 
-コンパイルして、再度コミットする
-a.outの内容も当然変わっているが、git ignoreに追加した為
+コンパイルして、再度コミットする。  
+a.outの内容も当然変わっているが、git ignoreに追加した為、
 無視されていることを確認する。
 ```bash
 $ gcc hello.c 
@@ -139,10 +145,11 @@ Gitの仕組みをうまく利用して、コミット時にソースコード�
 いくつかのCIサービス(Circle CI, Bitrise, Azure Pipeline)を紹介し、Penmarkでの活用例を説明する。
 
 # 実習
-いろいろ参考になるサイトがあるので、それを元に自分でGitの操作をやってみる。
-行き詰まったら、講師およびTAがサポートする
+実習は各自でやってね、下のリンクとかが参考になるかも？
 
-[Gitのコマンド一覧](https://git-scm.com/docs)  
-[Git公式のチュートリアル](https://git-scm.com/docs/gittutorial)
+- [Gitの本](https://www.amazon.co.jp/わかばちゃんと学ぶ-Git使い方入門%E3%80%88GitHub、Bitbucket、SourceTree〉-湊川-あい/dp/4863542178/ref=asc_df_4863542178/?tag=jpgo-22&linkCode=df0&hvadid=295686767484&hvpos=1o1&hvnetw=g&hvrand=12506259148326646793&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1009343&hvtargid=pla-526224398321&psc=1&th=1&psc=1)
 
-[Githubへの鍵登録](https://qiita.com/katsukii/items/9fd5bbe822904d7cdd0a)
+
+- [Gitのコマンド一覧](https://git-scm.com/docs)  
+- [Git公式のチュートリアル](https://git-scm.com/docs/gittutorial)
+- [Githubへの鍵登録](https://qiita.com/katsukii/items/9fd5bbe822904d7cdd0a)
