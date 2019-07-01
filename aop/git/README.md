@@ -18,7 +18,8 @@ Gitの具体的な操作を、筆者が開発しているモバイルアプリ�
 - log -pで詳細なコミットログの確認
 - revertで変更内容
 
-さらに、GUIでの操作方法を説明する。
+その後、これらの操作をGUIを用いて説明する。  
+
 ブランチの分け方については、まずタイムラインを書いて概要を説明し、実用例として
 [Penmarkのアプリバージョンごとのブランチ](https://dev.azure.com/penmark-jp/_git/Penmark)、
 [このリポジトリの分け方](https://github.com/kcs1959/web-php)
@@ -27,7 +28,7 @@ Gitの具体的な操作を、筆者が開発しているモバイルアプリ�
 複数人作業時の、Gitでの戦略(materブランチを元に機能追加ごとにブランチ生やしたり、
 developブランチ作ったり)について説明する。
 
-# 実際に、git initからのデモ
+# デモ
 Gitの各用語(ワークツリー、ステージングエリア、ローカルリポジトリ、リモートリポジトリ)とコマンド実行時の流れを説明する。
 
 ![概念図](https://camo.qiitausercontent.com/304d5a012dcb67e57295bd183086186f0570a98e/68747470733a2f2f71696974612d696d6167652d73746f72652e73332e616d617a6f6e6177732e636f6d2f302f3132393038382f35373232366638322d633534302d633264302d663563382d6261643362366536646661332e706e67)
@@ -120,7 +121,8 @@ $ git add .
 $ git commit -m "update message"
 ```
 
-変更内容を、元に戻す(Hello, Worldの状態に戻す)
+変更内容を、元に戻す(Hello, Worldの状態に戻す)。
+ここで、HEADは最新のコミットを表す。
 ```bash
 $ git revert HEAD
 $ cat hello.c
@@ -136,12 +138,17 @@ Githubの各機能(issue, PRとか)について説明し、どういったとこ
 - [PHPのコード](https://github.com/php/php-src)
 - [Ogiwaraのコード](https://github.com/Ogiwara-CostlierRain464)
 - [Flutterのコード](https://github.com/flutter/flutter)
+- [Web班の資料](https://github.com/kcs1959/web-php)
 
-Githubのようにソースコードのホスティングができるサービスは、他にはGitlab, Bitbucket, 
-Azure Repoなどがある。
+Githubのようにソースコードのホスティングができるサービスは、他には
+- Gitlab(https://gitlab.com/gitlab-com)
+- Bitbucket(https://bitbucket.org/)
+- Azure Repo(https://azure.microsoft.com/ja-jp/services/devops/)  
+
+などがある。
 
 # CI/CDについて
-Gitの仕組みをうまく利用して、コミット時にソースコードのチェック(CI)や、コンパイル・デプロイを自動で行う(CD)を自動で行うことができる。
+Gitの仕組みをうまく利用して、コミット時にソースコードのチェック(CI)や、コンパイル・デプロイを自動で行う(CD)を自動で行うことができる。  
 いくつかのCIサービス(Circle CI, Bitrise, Azure Pipeline)を紹介し、Penmarkでの活用例を説明する。
 
 # 実習
