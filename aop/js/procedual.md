@@ -220,7 +220,7 @@ while
 
 ```javascript
 while(true){
-    console.log("兵庫県警ホイホイ");
+    alert("兵庫県警ホイホイ");
 }
 
 ```
